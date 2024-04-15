@@ -1,0 +1,11 @@
+# Iniciar con
+#  docker-compose -f docker-compose.yaml -f docker-compose-prod.yaml --env-file backend/.env up --build
+version: "3.5"
+
+services:
+  database:
+    restart: "always"
+
+  # Nuxt.js
+  frontend:
+    command: sh -c "npm run build && npm run start"
